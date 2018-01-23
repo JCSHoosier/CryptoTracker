@@ -31,14 +31,14 @@ data class CoinMarketCapModel(
         @JsonProperty("symbol")
         val symbol : String,
         @JsonProperty("rank")
-        val rank : Int,
+        val rank : String,
         @JsonProperty("price_usd")
-        val value : Double,
+        val price_usd : Float,
         @JsonProperty("percent_change_1h")
-        val deltaHour : Double,
+        val percent_change_1h : Float,
         @JsonProperty("percent_change_24h")
-        val deltaDay : Double,
+        val percent_change_24h : Float,
         @JsonProperty("percent_change_7d")
-        val deltaWeek : Double
+        val percent_change_7d : Float
 )
 

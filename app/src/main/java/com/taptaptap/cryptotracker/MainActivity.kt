@@ -3,6 +3,7 @@ package com.taptaptap.cryptotracker
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.widget.TextView
 import com.taptaptap.cryptotracker.api.CoinMarketCap
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -18,12 +19,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("TAG", "inside oncreate")
+
         testCall()
     }
 
     private fun testCall(){
-        var coinMarketCap : CoinMarketCap = Retrofit.Builder()
+        val coinMarketCap : CoinMarketCap = Retrofit.Builder()
                 .baseUrl("https://api.coinmarketcap.com/v1/ticker/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
@@ -34,7 +35,11 @@ class MainActivity : AppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { response ->
-            Log.i(TAG, response.toString())
-        }
+                    Log.i(TAG, response.toString())
+                    findViewById<TextView>(R.id.firstCardName).setText(response[0].name)
+                    findViewById<TextView>(R.id.firstCardPrice).setText(response[0].price_usd.toString())
+                }
+
+
     }
 }
