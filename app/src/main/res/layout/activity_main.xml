@@ -6,57 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.taptaptap.cryptotracker.MainActivity">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/coinList"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp">
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/colorAccent">
+        <!--Card list will go here -->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/firstCardName"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:text="placeholder"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"/>
-
-                <TextView
-                    android:id="@+id/firstCardPrice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_margin="10dp"
-                    android:text="$$"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-    </LinearLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="30dp"/>
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

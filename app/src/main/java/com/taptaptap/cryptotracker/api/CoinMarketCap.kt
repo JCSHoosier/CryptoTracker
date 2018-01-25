@@ -5,6 +5,6 @@ import io.reactivex.Observable
 import retrofit2.http.GET
 
 interface CoinMarketCap {
-    @GET("bitcoin/?convert=USD")
+    @GET("?limit=10")
     fun cryptoValue() : Observable<List<CoinMarketCapModel>>
 }

@@ -23,22 +23,22 @@ Response Example:
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 data class CoinMarketCapModel(
         @JsonProperty("id")
-        val id : String,
+        var id : String,
         @JsonProperty("name")
-        val name : String,
+        var name : String,
         @JsonProperty("symbol")
-        val symbol : String,
+        var symbol : String,
         @JsonProperty("rank")
-        val rank : String,
+        var rank : String,
         @JsonProperty("price_usd")
-        val price_usd : Float,
+        var price_usd : Float,
         @JsonProperty("percent_change_1h")
-        val percent_change_1h : Float,
+        var percent_change_1h : Float,
         @JsonProperty("percent_change_24h")
-        val percent_change_24h : Float,
+        var percent_change_24h : Float,
         @JsonProperty("percent_change_7d")
-        val percent_change_7d : Float
+        var percent_change_7d : Float
 )
-
